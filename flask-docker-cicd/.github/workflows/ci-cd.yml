@@ -20,7 +20,8 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build Docker Image
-        run: docker build -t barathrajbaskar/flask-cicd-app .
+        working-directory: ./flash-docker-cicd
+        run: docker build -t flask-cicd-app .
 
       - name: Push Docker Image
         run: docker push barathrajbaskar/flask-cicd-app
